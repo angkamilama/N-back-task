@@ -42,7 +42,6 @@ function GameDisplay() {
 
   const stopMatch = () => {
     clearTimeout(myTimeout);
-    console.log("fdsfds");
   };
 
   console.log(DisplayedWordsArray);
