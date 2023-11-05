@@ -14,7 +14,7 @@ function GameDisplay() {
   const { state } = useLocation();
 
   useEffect(() => {
-    const id = setTimeout(createWord, 1500);
+    const id = setTimeout(createWord, 2500);
     return () => {
       clearTimeout(id);
     };
