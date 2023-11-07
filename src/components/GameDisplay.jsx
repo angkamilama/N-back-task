@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { set } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 
 function GameDisplay() {
@@ -54,7 +53,7 @@ function GameDisplay() {
       );
       if (slicedArray[0] === slicedArray[2]) {
         successCount.current++;
-        setWord((word) => "Correct");
+        setWord((word) => "correct");
       } else {
         failureCount.current++;
         setWord((word) => "Incorrect");
@@ -98,13 +97,8 @@ function GameDisplay() {
       <div>
         <div
           onClick={() => {
-            if (!running) {
-              setRunning((running) => true);
-              createWord();
-            } else {
-              setRunning((running) => false);
-              handleStop();
-            }
+            setRunning((running) => !running);
+            running ? handleStop() : createWord();
           }}
         >
           {running ? (
