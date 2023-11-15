@@ -3,13 +3,8 @@ import MyForm from "./MyForm";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const [name, setName] = useState("");
-  const userName = (value) => {
-    setName(value);
-  };
-  const navigate = useNavigate();
   return (
-    <div className="w-full h-screen  font-sans bg-green-300  p-2 text-center flex flex-col justify-evenly items-center">
+    <div className="w-full h-screen  font-sans bg-green-300 p-2 text-center flex flex-col justify-evenly items-center">
       <div className="w-10/12 border border-dashed border-blue-900 p-3 leading-7">
         <h1 className="text-2xl mb-4">About N-back task game</h1>
         <p>
@@ -22,7 +17,7 @@ function Home() {
         </p>
       </div>
       <div className="w-11/12 h-2/6 p-2  flex flex-col justify-evenly items-center ">
-        <MyForm userName={userName} />
+        <MyForm />
       </div>
     </div>
   );

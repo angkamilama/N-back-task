@@ -19,15 +19,8 @@ function MyForm({ userName }) {
   });
 
   const submitFunction = (data) => {
-    userName(data);
     navigate("GamePage", { state: { key: data } });
   };
-
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset();
-    }
-  }, [isSubmitSuccessful]);
 
   return (
     <div>
@@ -41,7 +34,10 @@ function MyForm({ userName }) {
             {...register("name")}
           />
         </div>
-        <div className="mb-3 text-red-900">{errors.name?.message}</div>
+
+        {errors.name?.message && (
+          <div className="mb-3 text-red-900">{errors.name.message}</div>
+        )}
         <button className="px-4 py-2 m-2 border border-blue-500 rounded-lg bg-blue-500 text-slate-200 shadow-lg outline-0 hover:bg-slate-200 hover:text-blue-500 hover:border hover:border-blue-600 font-medium">
           Submit
         </button>
